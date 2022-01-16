@@ -1,7 +1,7 @@
 <!--
  * @Author: William
  * @Date: 2022-01-15 19:07:50
- * @LastEditTime: 2022-01-16 13:12:10
+ * @LastEditTime: 2022-01-16 15:50:44
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /课程学习进度/readme.md
@@ -26,6 +26,40 @@
      2. 克隆一个已经存在的版本库。
 
 ### 代码修改与文件同步（Manipulating Files And Staying Sync）
-    每次进行提交（commit）操作时，都会使得版本库中添加一个新的版本，包括了改动的日志信息以及提交留言（commit messsage）方便进行查找为什么进行这个改动。
+    每次进行提交（commit）操作时，都会使得版本库中添加一个新的版本，包括了改动的日志信息
+    以及提交留言（commit messsage）方便进行查找为什么进行这个改动。
+    
     Push可以当作是把数据进行共享推入到上游版本库（upstream repository）。
+    
+### 分支（Branch）
+    首先，在版本库中创建分支的起点。自此，两路发展平行并进。每条分支记录这条分支上发生的变化，
+    与Master隔离。
+
+    可以进行数据的记录分支不进行合并，可以在进行完实验后直接删除。
+
+### 合并（Merge）
+    合并就是把两条以上的分支合并到一起，Git 会比较各个分支上的变化，确定变化发生的位置———
+    ——那个文件的那个位置
+
+## Git设置
+    command ： git config
+    git config --global uesr.name "William"
+    git config --global uesr.email "zhijiema6@gmail.com"
+    check : git config --global --list
+    
+    Use different colour to show codes : git config --global colour.iu "auto" / "false"
+
+
+### 创建版本库（Creating a Repository）
+    以HTML为例子：
+        mkdir mysite  //创建文件
+        cd mysite     //进入到mysite 文件夹
+        git init        // 创建本地git
+
+### 代码修改（Marking Changes）
+    git add index.html //向本地git添加一个HTML文件
+    git commit -m "add in hello world HTML" //设置一个提交记录
+    
+    git log // 查看提交的相关信息
+
     
