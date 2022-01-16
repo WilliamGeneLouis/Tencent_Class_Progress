@@ -1,7 +1,7 @@
 <!--
  * @Author: William
  * @Date: 2022-01-15 19:07:50
- * @LastEditTime: 2022-01-16 22:24:35
+ * @LastEditTime: 2022-01-16 22:29:06
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /课程学习进度/readme.md
@@ -76,6 +76,9 @@
     git add -i //启动交互命令提示符 可以暂存对已有文件的修改
    
 ### git add -i 
+     guister.iu@William  ~  cd mysite                        ✔  549  22:28:21
+     guister.iu@William  ~/mysite   master ●  git add -i   ✔  550  22:28:30
+
                     staged     unstaged path
         1:    unchanged        +1/-1 index.html
 
