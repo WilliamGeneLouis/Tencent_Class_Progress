@@ -1,7 +1,7 @@
 <!--
  * @Author: William
  * @Date: 2022-01-15 19:07:50
- * @LastEditTime: 2022-01-17 18:08:38
+ * @LastEditTime: 2022-01-17 20:37:27
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /课程学习进度/readme.md
@@ -9,7 +9,7 @@
 
 # 课程进度情况
 
-## 1.16 (Part one)
+## Git初学
 版本控制系统（Version Control System, VCS）: 记录和跟踪项目中各个文件的内容变化。
 版本控制工具：自动备份以及跟踪项目所有代码的修改。
 
@@ -66,7 +66,7 @@
     git checkout branch/name   //可以切换分支
     git branch x master   //从master上创建一个叫x分支
     
-### 克隆版本库
+### 克隆版本库（Clone）
     git clone git://github.com/tswicegood/mysite.git
 
 ##  添加文件到暂存区（Add file）
@@ -168,3 +168,50 @@
         </body>
         </html>
         (1/1) Stage this hunk [y,n,q,a,d,e,?]? y        //输入y表示暂存状态
+
+### 提交修改（Commit Changes）
+    Commit意味着把修改上传到本地版本库。   // Git不支持自动更新版本库。
+    可以把暂存区当作是一个缓冲区，用命令git add 向缓冲区中添加修改，知道执行git commit 提交缓冲区中的修改。
+    
+#### 提交方法一
+    (先暂存在提交 // 提交暂存后的修改)
+    首先对要提交的文件或者是修改调用命令 git add 来添加到暂存区 例如： git add -p
+    git add some-file
+    git commit -m "changes to some-file"
+
+#### 提交方法二
+    （直接提交 // 提交工作目录树中的所有修改）
+    给命令git commit 传递 -a 参数， Git 会把工作目录树中当前的所有修改提交到版本库中 //书中未标注本地版本库还是其他版本库
+    例如：
+    git commit -m "changes to some-file" -a
+
+#### 提交方法三
+    （直接提交 // 提交工作目录树中指定的修改）
+    指定要提交的文件或者是文件列表，把要提交的文件列在其他参数后面。
+    它将提取工作目录树中最新的版本，例如：
+    git commit -m "changes to some-file" some-file
+
+### 查看修改内容
+    command line:
+        git status
+        git diff
+
+#### 查看当前状态
+    使用git status 可以查看工作目录树中所有的变动，该命令的输出结果是暂存区内要提交的内容，
+    工作目录树中未纳入暂缓区的改动，以及未纳入Git版本控制的新文件
+
+#### 查看文件改动
+    使用命令git diff, Git可以显示出工作目录树、暂存区以及版本之间的差异
+    直接调用不带参数的git diff，将显示工作目录树中未被暂存的改动（也未提交）
+    
+    git diff --cached 可以比较暂存区和版本库中的区别
+    git diff HEAD 可以比较工作目录树（包括暂存和为暂存的修改）与版本库中的差别
+    HEAD 指的是当前所在分支末梢的最新提交。
+
+###  文件重命名与移动
+    git mv <源文件名字> <新文件名字>
+    该命令告诉git使用源文件的内容创建新文件，新文件保留源文件的历史修改记录，并且删除旧文件。
+
+### 复制文件
+
+<front color = red>git cp 该命令不存在</front>
