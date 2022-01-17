@@ -1,7 +1,7 @@
 <!--
  * @Author: William
  * @Date: 2022-01-15 19:07:50
- * @LastEditTime: 2022-01-16 22:29:06
+ * @LastEditTime: 2022-01-17 18:08:38
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /课程学习进度/readme.md
@@ -123,5 +123,48 @@
         *** Commands ***
         1: status	  2: update	  3: revert	  4: add untracked
         5: patch	  6: diff	  7: quit	  8: help
-        What now>
-   
+        What now>5                       /* 此时输入4，意味着暂存还没有被git跟踪的文件。 */
+                        staged     unstaged path
+        1:    unchanged        +1/-1 index.html
+        Patch update>> 1
+                staged     unstaged path
+        * 1:    unchanged        +1/-1 index.html
+        Patch update>>   //此处输入了enter键
+        diff --git a/index.html b/index.html
+        index e812d0a..ca86894 100644
+        --- a/index.html
+        +++ b/index.html
+        @@ -6,7 +6,7 @@
+        <body>
+            <h1>Hello World!</h1>
+            <ul>
+        -        <li><a href="bio.html">Biography</a></li>
+        +        <li><a href="about.html">About</a></li>
+            </ul>
+        </body>
+        </html>
+        (1/1) Stage this hunk [y,n,q,a,d,e,?]?         //根据需求决定是否添加文本块
+                                            // y代表接受修改，n代表忽略修改，a代表添加剩余修改，d代表删除剩余的修改，？会显示所有的信息。
+        
+        *** Commands ***
+        1: status	  2: update	  3: revert	  4: add untracked
+        5: patch	  6: diff	  7: quit	  8: help
+        What now> 7
+        Bye.
+    
+    输入 git add -p 可以直接进入补丁模式：
+        guister.iu@William  ~/mysite   master ●  git add -p   ✔  553  18:04:46  //为乱码，不支持该字符显示
+        diff --git a/index.html b/index.html
+        index e812d0a..ca86894 100644
+        --- a/index.html
+        +++ b/index.html
+        @@ -6,7 +6,7 @@
+        <body>
+            <h1>Hello World!</h1>
+            <ul>
+        -        <li><a href="bio.html">Biography</a></li>
+        +        <li><a href="about.html">About</a></li>
+            </ul>
+        </body>
+        </html>
+        (1/1) Stage this hunk [y,n,q,a,d,e,?]? y        //输入y表示暂存状态
