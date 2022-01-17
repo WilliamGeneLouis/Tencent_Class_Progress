@@ -1,7 +1,7 @@
 <!--
  * @Author: William
  * @Date: 2022-01-15 19:07:50
- * @LastEditTime: 2022-01-17 20:40:35
+ * @LastEditTime: 2022-01-17 21:38:44
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /课程学习进度/readme.md
@@ -234,5 +234,19 @@ git mv <源文件名字> <新文件名字>
 该命令告诉git使用源文件的内容创建新文件，新文件保留源文件的历史修改记录，并且删除旧文件。
 
 
+## 理解和使用分支
+
+### 什么是分支
+
+    git branch -m master mymaster  // change master branch name to mymaster 
+    git branch // show us branch name
+
+    -m 参数告诉Git要执行分支移动命令操作。
+    git branch 没有参数，由于当前只有master这一条分支，所以只显示这一条分支
 
 
+#### 以下情况可以创建分支
+
+1. 试验性更改：
+比如想测试新算法，看看是否会更快；或者为某个特别的模式重构部分代码。这时就可以创建新分支来发展工作，与那些
+需要立即提交和上传的变更区分看。
