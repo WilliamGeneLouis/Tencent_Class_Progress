@@ -1,7 +1,7 @@
 <!--
  * @Author: William
  * @Date: 2022-01-15 19:07:50
- * @LastEditTime: 2022-01-17 21:49:22
+ * @LastEditTime: 2022-01-17 23:06:34
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /课程学习进度/readme.md
@@ -230,7 +230,8 @@
 
 ###  文件重命名与移动
 
-git mv <源文件名字> <新文件名字>
+    git mv <源文件名字> <新文件名字>
+
 该命令告诉git使用源文件的内容创建新文件，新文件保留源文件的历史修改记录，并且删除旧文件。
 
 
@@ -248,7 +249,38 @@ git mv <源文件名字> <新文件名字>
 #### 以下情况可以创建分支
 
 1. 试验性更改：
+
 比如想测试新算法，看看是否会更快；或者为某个特别的模式重构部分代码。这时就可以创建新分支来发展工作，与那些
 需要立即提交和上传的变更区分看。
 
-2. 增加新功能
+2. 增加新功能:
+
+为每个新功能的开发创建新分支。完成该功能的开发后，就可以合并回主分支。这时可以选用一般方法合并上所有的历史
+记录，或者将所有历史记录压合在一份提交中。
+
+3. Bug修复：
+
+不管是修复未发布代码中的Bug，还是修复已经标记发布代码中的Bug，都可以创建新分支来跟踪对该Bug的修改。你可以
+灵活使用不同的方法，将Bug修改合并回原来的代码中，这与使用分支开发新功能时的情形差不多，当对Bug进行试验性修
+复的时候，这种方法特别有用。
+
+### 创建新分支
+
+    git branch new  //  create a new branch named "new"
+    git branch      // show all branch
+    git checkout new // check new branch  // switch new branch
+    git checkout -b alternate master  // 快捷方法创建alternate
+
+### 合并分支间的修改
+
+#### 直接合并
+
+    把两条分支上的历史轨迹合并，交汇到一起
+
+#### 压合合并
+
+    将一条分支上的若干个提交条目压合成一个提交项目，提交到另一条分支的末梢
+
+#### 拣选合并    
+
+    拣选另一条分支上的某个提交条目的改动带到当前分支上
