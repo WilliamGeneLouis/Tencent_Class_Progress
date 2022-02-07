@@ -217,11 +217,11 @@ print(s1, s2)
 
 # 交集
 
-print(s1&s2)
+print(s1 & s2)
 
 # 并集
 
-print(s1|s2)
+print(s1 | s2)
 
 # 差集
 
@@ -229,6 +229,68 @@ print(s1 - s2)
 
 # 对称集  cap 帽子符号
 
-print(s1 ^ s2)          # 先并起来然后删除共有的部分
+print(s1 ^ s2)  # 先并起来然后删除共有的部分
 
+
+# 函数
+
+def func(p):
+    print("p is {}".format(p))
+
+
+func(4)
+
+
+def default(a, b=1, c=2):
+    print('a is {}, b is {}, c is {}'.format(a, b, c))
+
+
+default(1, 1, 1)
+default(1, c=1)
+default(1)
+
+
+def change_func(a, *args, **kwargs):
+    print('a is {}, args is {}, kwargs is {}'.format(a, args, kwargs))
+
+
+change_func(1)
+change_func(1, c=1)
+change_func(1, 1, 1)
+change_func(1, 1, 1, c=1)
+
+args = (0, 10, 2)
+print(list(range(*args)))
+
+# 函数--作用域
+
+total = 2
+
+
+def sum(arg1, arg2):
+    total = arg1 + arg2
+    print('total value is {} in function'.format(total))
+    return total
+
+
+sum(10, 20)
+print('total value is {} in here'.format(total))
+
+# 面向函数编程
+
+a = [0, 1, 2, 3, 4, 5]
+
+filter_result = list(filter(lambda x: x % 2 == 0, a))
+
+print(filter_result)
+
+map_result = list(map(lambda x: x ** x, a))
+
+print(map_result)
+
+from functools import reduce
+
+reduce_result = reduce(lambda a, b: a + b, a, 0)
+
+print(reduce_result)
 
