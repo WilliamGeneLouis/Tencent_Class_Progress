@@ -11,3 +11,7 @@ for element in text:
 	else:
 		print(element, end='')
 
+print('\n')
+
+print(''.join( [chr ((ord(element) - ord('a') + 2 ) % 26 + ord('a')) if 'a' <= element <= 'z' else element for element in text]) )
+

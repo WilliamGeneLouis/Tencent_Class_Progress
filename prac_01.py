@@ -149,3 +149,86 @@ while index < len(a_list):
 else:
     print("x not found")
 
+print('\n')
+
+# Python_basic_prac_01
+
+# finished in GitHub
+
+# 数据类型-dictionary
+
+a_dict = {'abc': 123, 98.6: 37, (1, 2): 200}
+
+print(a_dict)
+
+del a_dict['abc']
+
+print(a_dict)
+
+print(a_dict.get(98.6))  # 查询字典中的数据并且返回value值
+
+print(a_dict.get('abc'))  # 查询不到返回none
+
+print(a_dict.get('abc', -1))  # 查询不到返回-1
+
+print(a_dict.keys())
+
+print(a_dict.values())
+
+print(a_dict.items())
+
+print(a_dict.pop(98.6))
+
+print(a_dict)
+
+a_dict_01 = {'x': 123, 'y': 1134}
+
+a_dict.update(a_dict_01)
+
+print(a_dict)
+
+a_dict.clear()
+
+print(a_dict)
+
+# 数据类型-set
+
+s = {2, 'x'}
+
+print(2 in s)
+
+print(4 in s)
+
+s.add(4)
+
+print(4 in s)
+
+s.remove(4)
+
+print(4 in s)
+
+# 集合的运算
+
+s1 = set(range(3))
+
+s2 = set(range(2, 5))
+
+print(s1, s2)
+
+# 交集
+
+print(s1&s2)
+
+# 并集
+
+print(s1|s2)
+
+# 差集
+
+print(s1 - s2)
+
+# 对称集  cap 帽子符号
+
+print(s1 ^ s2)          # 先并起来然后删除共有的部分
+
+
