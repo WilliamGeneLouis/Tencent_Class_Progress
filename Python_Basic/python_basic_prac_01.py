@@ -4,7 +4,7 @@ print(ord('a'))
 
 for element in text:
 
-	if element >= 'a' and element <= 'z':
+	if 'a' <= element <= 'z':
 		element = chr ((ord(element) - ord('a') + 2 ) % 26 + ord('a'))
 		print(element, end='')
 
